@@ -1,0 +1,31 @@
+{
+  "users": [
+    { "id": 1, "name": "John Doe", "email": "john.doe@example.com" },
+    { "id": 2, "name": "Jane Smith", "email": "jane.smith@example.com" }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Welcome",
+      "body": "This is a sample post. You can edit or delete it."
+    }
+  ],
+  "comments": [],
+  "albums": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "My first album"
+    }
+  ],
+  "photos": [],
+  "todos": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Explore the dashboard",
+      "completed": false
+    }
+  ]
+}
