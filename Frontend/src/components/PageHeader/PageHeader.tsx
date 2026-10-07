@@ -3,7 +3,7 @@ type Props = {
     addLabel: string;
     onAdd: () => void;
     disabled?: boolean;
-    compact?: boolean; // عنوان أصغر (للتعليقات)
+    compact?: boolean; 
   };
   
   const PageHeader = ({ title, addLabel, onAdd, disabled, compact }: Props) => {

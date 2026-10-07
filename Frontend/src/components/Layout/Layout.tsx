@@ -5,7 +5,7 @@ import Navbar from "../Navbar/Navbar.tsx";
 const Layout = () => {
   const { userId } = useUser();
 
-  //بدون هالـ guard رح تعمل fetch بـ userId=null وبتطلع صفحة فاضية.
+  
   if (userId === null) {
     return <Navigate to="/" replace />;
   }

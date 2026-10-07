@@ -74,6 +74,51 @@ export const deletePost = (id: number) =>
 export const fetchUserAlbums = (userId: number) =>
   fetch(`${BASE_URL}/albums?userId=${userId}`).then(handleResponse);
 
+export const createAlbum = (album: { title: string; userId: number }) =>
+  fetch(`${BASE_URL}/albums`, {
+    method: "POST",
+    headers: jsonHeaders,
+    body: JSON.stringify(album),
+  }).then(handleResponse);
+
+export const updateAlbum = (id: number, data: { title: string }) =>
+  fetch(`${BASE_URL}/albums/${id}`, {
+    method: "PATCH",
+    headers: jsonHeaders,
+    body: JSON.stringify(data),
+  }).then(handleResponse);
+
+export const deleteAlbum = (id: number) =>
+  fetch(`${BASE_URL}/albums/${id}?_dependent=photos`, {
+    method: "DELETE",
+  }).then(handleResponse);
+
 // Todos
 export const fetchUserTodos = (userId: number) =>
   fetch(`${BASE_URL}/todos?userId=${userId}`).then(handleResponse);
+
+export const createTodo = (todo: {
+  title: string;
+  completed: boolean;
+  userId: number;
+}) =>
+  fetch(`${BASE_URL}/todos`, {
+    method: "POST",
+    headers: jsonHeaders,
+    body: JSON.stringify(todo),
+  }).then(handleResponse);
+
+export const updateTodo = (
+  id: number,
+  data: { title: string; completed: boolean }
+) =>
+  fetch(`${BASE_URL}/todos/${id}`, {
+    method: "PATCH",
+    headers: jsonHeaders,
+    body: JSON.stringify(data),
+  }).then(handleResponse);
+
+export const deleteTodo = (id: number) =>
+  fetch(`${BASE_URL}/todos/${id}`, {
+    method: "DELETE",
+  }).then(handleResponse);
