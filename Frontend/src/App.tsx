@@ -16,6 +16,7 @@ import MyPosts from "./pages/MyPosts.tsx";
 import MyAlbums from "./pages/MyAlbums.tsx";
 import MyTodos from "./pages/MyTodos.tsx";
 import MyPhotos from "./pages/MyPhotos.tsx"
+import PostComments from "./pages/PostComments.tsx";
 import UserProvider from "./context/UserProvider.tsx";
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/my-albums" element={<MyAlbums />} />
           <Route path="/my-todos" element={<MyTodos />} />
          <Route path="/my-photos" element={<MyPhotos/>}/>
+         <Route path="/posts/:postId/comments" element={<PostComments />} />
         </Route>
       </Routes>
     </UserProvider>

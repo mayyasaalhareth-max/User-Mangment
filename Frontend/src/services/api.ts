@@ -153,3 +153,34 @@ export const deletePhoto = (id: number) =>
   fetch(`${BASE_URL}/photos/${id}`, {
     method: "DELETE",
   }).then(handleResponse);
+
+  // Comments
+export const fetchPostComments = (postId: number) =>
+  fetch(`${BASE_URL}/comments?postId=${postId}`).then(handleResponse);
+
+export const createComment = (comment: {
+  postId: number;
+  name: string;
+  email: string;
+  body: string;
+}) =>
+  fetch(`${BASE_URL}/comments`, {
+    method: "POST",
+    headers: jsonHeaders,
+    body: JSON.stringify(comment),
+  }).then(handleResponse);
+
+export const updateComment = (
+  id: number,
+  data: { name: string; email: string; body: string }
+) =>
+  fetch(`${BASE_URL}/comments/${id}`, {
+    method: "PATCH",
+    headers: jsonHeaders,
+    body: JSON.stringify(data),
+  }).then(handleResponse);
+
+export const deleteComment = (id: number) =>
+  fetch(`${BASE_URL}/comments/${id}`, {
+    method: "DELETE",
+  }).then(handleResponse);
