@@ -11,7 +11,15 @@
       "body": "This is a sample post. You can edit or delete it."
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "postId": 1,
+      "id": 3,
+      "name": "odio adipisci rerum aut animi",
+      "email": "Nikita@garfield.biz",
+      "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+    }
+  ],
   "albums": [
     {
       "id": 1,
@@ -19,13 +27,27 @@
       "title": "My first album"
     }
   ],
-  "photos": [],
+  "photos": [
+    {
+      "albumId": 1,
+      "id": 3,
+      "title": "officia porro iure quia iusto qui ipsa ut modi",
+      "url": "https://picsum.photos/seed/3/600",
+      "thumbnailUrl": "https://picsum.photos/seed/3/150"
+    }
+  ],
   "todos": [
     {
       "id": 1,
       "userId": 1,
       "title": "Explore the dashboard",
       "completed": false
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Explore the dashboard",
+      "completed": true
     }
   ]
 }
