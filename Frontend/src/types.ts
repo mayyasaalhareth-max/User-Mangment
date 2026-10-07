@@ -7,3 +7,19 @@ export type TodoType = {
   title: string;
   completed: boolean;
 };
+
+export type CommentType = {
+  id: number;
+  postId: number;
+  name: string;
+  email: string;
+  body: string;
+};
+
+export type PhotoType = {
+  id: number;
+  albumId: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
+};

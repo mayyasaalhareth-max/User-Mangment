@@ -1,20 +1,46 @@
 {
   "users": [
-    { "id": 1, "name": "John Doe", "email": "john.doe@example.com" },
-    { "id": 2, "name": "Jane Smith", "email": "jane.smith@example.com" }
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com"
+    }
   ],
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
-      "title": "Welcome",
+      "title": "Welcomewwww11111111",
       "body": "This is a sample post. You can edit or delete it."
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "title": "Welcomewwww",
+      "body": "This is a sample post. You can edit or delete it."
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "title": "Welcomewwww",
+      "body": "This is a sample post. You can edit or delete it."
+    },
+    {
+      "title": "VVVVVVVVVVVVVVVV",
+      "body": "vvvvvvvvvvvv",
+      "userId": 1,
+      "id": "bPIxE3ujhz4"
     }
   ],
   "comments": [
     {
       "postId": 1,
-      "id": 3,
+      "id": "3",
       "name": "odio adipisci rerum aut animi",
       "email": "Nikita@garfield.biz",
       "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
@@ -22,7 +48,7 @@
   ],
   "albums": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "title": "My first album"
     }
@@ -30,7 +56,7 @@
   "photos": [
     {
       "albumId": 1,
-      "id": 3,
+      "id": "3",
       "title": "officia porro iure quia iusto qui ipsa ut modi",
       "url": "https://picsum.photos/seed/3/600",
       "thumbnailUrl": "https://picsum.photos/seed/3/150"
@@ -38,16 +64,17 @@
   ],
   "todos": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "title": "Explore the dashboard",
       "completed": false
     },
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "title": "Explore the dashboard",
       "completed": true
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
