@@ -57,6 +57,9 @@ const Navbar = () => {
           <NavLink to="/my-todos" className={linkClass}>
             My Todos
           </NavLink>
+          <NavLink to="/my-photos" className={linkClass}>
+            My Photos
+          </NavLink>
         </div>
 
         <button

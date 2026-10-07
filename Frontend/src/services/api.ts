@@ -122,3 +122,34 @@ export const deleteTodo = (id: number) =>
   fetch(`${BASE_URL}/todos/${id}`, {
     method: "DELETE",
   }).then(handleResponse);
+
+ 
+// Photos
+export const fetchAlbumPhotos = (albumId: number) =>
+  fetch(`${BASE_URL}/photos?albumId=${albumId}`).then(handleResponse);
+
+export const createPhoto = (photo: {
+  title: string;
+  url: string;
+  albumId: number;
+}) =>
+  fetch(`${BASE_URL}/photos`, {
+    method: "POST",
+    headers: jsonHeaders,
+    body: JSON.stringify(photo),
+  }).then(handleResponse);
+
+export const updatePhoto = (
+  id: number,
+  data: { title: string; url: string; albumId: number }
+) =>
+  fetch(`${BASE_URL}/photos/${id}`, {
+    method: "PATCH",
+    headers: jsonHeaders,
+    body: JSON.stringify(data),
+  }).then(handleResponse);
+
+export const deletePhoto = (id: number) =>
+  fetch(`${BASE_URL}/photos/${id}`, {
+    method: "DELETE",
+  }).then(handleResponse);
