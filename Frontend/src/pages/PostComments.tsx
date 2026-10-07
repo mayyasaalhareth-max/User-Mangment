@@ -15,7 +15,7 @@ import CommentForm from "../components/CommentForm/CommentForm.tsx";
 type CommentData = { name: string; email: string; body: string };
 
 const PostComments = () => {
-    const { postId } = useParams(); // نأخذه من الرابط: /posts/5/comments
+    const { postId } = useParams(); 
     const [comments, setComments] = useState<CommentType[]>([]);
     const [error, setError] = useState("");
     const [isAdding, setIsAdding] = useState(false);
@@ -23,7 +23,7 @@ const PostComments = () => {
 
     useEffect(() => {
         if (!postId) return;
-        fetchPostComments(Number(postId)) // نجلب تعليقات هذا البوست فقط
+        fetchPostComments(Number(postId)) 
             .then(setComments)
             .catch((err) => setError(err.message));
     }, [postId]);
@@ -31,7 +31,7 @@ const PostComments = () => {
     // ---------- Add ----------
     const handleAdd = (data: CommentData) => {
         if (!postId) return;
-        createComment({ ...data, postId: Number(postId) }) // postId من الرابط
+        createComment({ ...data, postId: Number(postId) }) 
             .then((newComment) => {
                 setComments((prev) => [newComment, ...prev]);
                 setIsAdding(false);
@@ -71,7 +71,7 @@ const PostComments = () => {
                 title={`Comments - Post #${postId}`}
                 addLabel="Add Comment"
                 onAdd={() => {
-                    setEditingComment(null); // نسكّر أي تعديل مفتوح
+                    setEditingComment(null);
                     setIsAdding(true);
                 }}
                 disabled={isAdding || editingComment !== null}
@@ -88,7 +88,6 @@ const PostComments = () => {
             <div className="grid gap-4 sm:grid-cols-2">
                 {comments.map((comment) =>
                     editingComment?.id === comment.id ? (
-                        // وضع التعديل: بدل الـ Card منعرض الفورم بقيم التعليق
                         <CommentForm
                             key={comment.id}
                             initialName={comment.name}

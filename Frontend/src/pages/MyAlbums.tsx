@@ -31,9 +31,9 @@ const MyAlbums = () => {
   // ---------- Add ----------
   const handleAdd = (data: AlbumData) => {
     if (userId === null) return;
-    createAlbum({ ...data, userId }) // userId من الـ Context
+    createAlbum({ ...data, userId })
       .then((newAlbum) => {
-        setAlbums((prev) => [newAlbum, ...prev]); // نضيفه فوق بدون ما نعمل fetch جديد
+        setAlbums((prev) => [newAlbum, ...prev]); 
         setIsAdding(false);
       })
       .catch((err) => setError(err.message));
@@ -71,7 +71,7 @@ const MyAlbums = () => {
         title="My Albums"
         addLabel="Add Album"
         onAdd={() => {
-          setEditingAlbum(null); // نسكّر أي تعديل مفتوح
+          setEditingAlbum(null); 
           setIsAdding(true);
         }}
         disabled={isAdding || editingAlbum !== null}
@@ -88,7 +88,6 @@ const MyAlbums = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         {albums.map((album) =>
           editingAlbum?.id === album.id ? (
-            // وضع التعديل: بدل الـ Card منعرض الفورم بقيم الألبوم
             <AlbumForm
               key={album.id}
               initialTitle={album.title}

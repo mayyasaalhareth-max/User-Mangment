@@ -17,8 +17,8 @@ const PostForm = ({
   const [body, setBody] = useState(initialBody);
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault(); // نمنع reload الصفحة
-    if (!title.trim() || !body.trim()) return; // ما نقبل حقول فاضية
+    e.preventDefault();
+    if (!title.trim() || !body.trim()) return;
     onSave({ title, body });
   };
 

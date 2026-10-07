@@ -27,8 +27,7 @@ const MyPhotos = () => {
         if (userId === null) return;
         fetchUserAlbums(userId)
             .then(async (userAlbums) => {
-                setAlbums(userAlbums); // نحتفظ بالألبومات لقائمة الإضافة
-                // نجلب صور كل ألبوم ثم ندمجها في مصفوفة واحدة
+                setAlbums(userAlbums); 
                 const results = await Promise.all(
                     userAlbums.map((album) => fetchAlbumPhotos(album.id))
                 );
@@ -39,9 +38,9 @@ const MyPhotos = () => {
 
     // ---------- Add ----------
     const handleAdd = (data: PhotoData) => {
-        createPhoto(data) // الصورة تحتاج albumId فقط، لا userId
+        createPhoto(data) 
             .then((newPhoto) => {
-                setPhotos((prev) => [newPhoto, ...prev]); // نضيفها فوق بدون fetch جديد
+                setPhotos((prev) => [newPhoto, ...prev]); 
                 setIsAdding(false);
             })
             .catch((err) => setError(err.message));
@@ -79,7 +78,7 @@ const MyPhotos = () => {
                 title="My Photos"
                 addLabel="Add Photo"
                 onAdd={() => {
-                    setEditingPhoto(null); // نسكّر أي تعديل مفتوح
+                    setEditingPhoto(null); 
                     setIsAdding(true);
                 }}
                 disabled={isAdding || editingPhoto !== null}
@@ -100,7 +99,6 @@ const MyPhotos = () => {
             <div className="grid gap-4 sm:grid-cols-2">
                 {photos.map((photo) =>
                     editingPhoto?.id === photo.id ? (
-                        // وضع التعديل: بدل الـ Card منعرض الفورم بقيم الصورة
                         <PhotoForm
                             key={photo.id}
                             albums={albums}

@@ -24,8 +24,8 @@ const PhotoForm = ({
     );
 
     const handleSubmit = (e: FormEvent) => {
-        e.preventDefault(); // نمنع reload الصفحة
-        if (!title.trim() || !url.trim() || !albumId) return; // ما نقبل حقول فاضية
+        e.preventDefault(); 
+        if (!title.trim() || !url.trim() || !albumId) return; 
         onSave({ title, url, albumId });
     };
 

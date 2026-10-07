@@ -17,8 +17,8 @@ const TodoForm = ({
   const [completed, setCompleted] = useState(initialCompleted);
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault(); // نمنع reload الصفحة
-    if (!title.trim()) return; // ما نقبل حقول فاضية
+    e.preventDefault(); 
+    if (!title.trim()) return; 
     onSave({ title, completed });
   };
 

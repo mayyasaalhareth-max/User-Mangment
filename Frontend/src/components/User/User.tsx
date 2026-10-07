@@ -26,7 +26,7 @@ const User = () => {
           <li key={user.id}>
             <NavLink
               to="/posts"
-              onClick={() => setUserId(Number(user.id))} // نخزّن الـ id، وبعدها الرابط بينقلنا
+              onClick={() => setUserId(Number(user.id))} 
               className="text-emerald-700 underline hover:text-emerald-900"
             >
               {user.name}

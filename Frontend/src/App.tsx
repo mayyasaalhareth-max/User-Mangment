@@ -23,10 +23,8 @@ const App = () => {
   return (
     <UserProvider>
       <Routes>
-        {/* الصفحة الأولى: قائمة اليوزرز */}
         <Route path="/" element={<User />} />
 
-        {/* صفحات فيها Navbar، وكلها بتمرّ على الـ guard */}
         <Route element={<Layout />}>
           <Route path="/posts" element={<AllPosts />} />
           <Route path="/my-posts" element={<MyPosts />} />

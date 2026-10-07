@@ -20,8 +20,8 @@ const CommentForm = ({
     const [body, setBody] = useState(initialBody);
 
     const handleSubmit = (e: FormEvent) => {
-        e.preventDefault(); // نمنع reload الصفحة
-        if (!name.trim() || !email.trim() || !body.trim()) return; // ما نقبل حقول فاضية
+        e.preventDefault(); 
+        if (!name.trim() || !email.trim() || !body.trim()) return;
         onSave({ name, email, body });
     };
 

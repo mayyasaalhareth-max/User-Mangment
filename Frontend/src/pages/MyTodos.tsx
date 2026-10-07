@@ -31,9 +31,9 @@ const MyTodos = () => {
   // ---------- Add ----------
   const handleAdd = (data: TodoData) => {
     if (userId === null) return;
-    createTodo({ ...data, userId }) // userId من الـ Context
+    createTodo({ ...data, userId }) 
       .then((newTodo) => {
-        setTodos((prev) => [newTodo, ...prev]); // نضيفه فوق بدون ما نعمل fetch جديد
+        setTodos((prev) => [newTodo, ...prev]); 
         setIsAdding(false);
       })
       .catch((err) => setError(err.message));
@@ -69,7 +69,7 @@ const MyTodos = () => {
         title="My Todos"
         addLabel="Add Todo"
         onAdd={() => {
-          setEditingTodo(null); // نسكّر أي تعديل مفتوح
+          setEditingTodo(null); 
           setIsAdding(true);
         }}
         disabled={isAdding || editingTodo !== null}
@@ -86,7 +86,6 @@ const MyTodos = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         {todos.map((todo) =>
           editingTodo?.id === todo.id ? (
-            // وضع التعديل: بدل الـ Card منعرض الفورم بقيم الـ todo
             <TodoForm
               key={todo.id}
               initialTitle={todo.title}

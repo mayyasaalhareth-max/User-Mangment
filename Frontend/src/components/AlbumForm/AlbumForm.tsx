@@ -10,8 +10,8 @@ const AlbumForm = ({ initialTitle = "", onSave, onCancel }: Props) => {
   const [title, setTitle] = useState(initialTitle);
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault(); // نمنع reload الصفحة
-    if (!title.trim()) return; // ما نقبل حقول فاضية
+    e.preventDefault();
+    if (!title.trim()) return; 
     onSave({ title });
   };
 

@@ -2,15 +2,14 @@ import type { ReactNode } from "react";
 
 type CardProps = {
   title: string;
-  subtitle?: string; // سطر صغير تحت العنوان (اختياري)
-  badge?: string; // علامة صغيرة بالزاوية (اختياري)
-  badgeColor?: "green" | "gray" | "red"; // لون العلامة
-  children?: ReactNode; // المحتوى الرئيسي
-  footer?: ReactNode; // أزرار أو معلومات بآخر الكرت
-  className?: string; // لإضافة كلاسات من برّا
+  subtitle?: string; 
+  badge?: string; 
+  badgeColor?: "green" | "gray" | "red";
+  children?: ReactNode; 
+  footer?: ReactNode; 
+  className?: string; 
 };
 
-// لازم تكون الكلاسات مكتوبة كاملة حتى Tailwind يلاقيها
 const badgeStyles = {
   green: "bg-emerald-100 text-emerald-700",
   gray: "bg-gray-100 text-gray-600",

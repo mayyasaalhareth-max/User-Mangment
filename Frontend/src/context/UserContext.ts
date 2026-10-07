@@ -11,7 +11,6 @@ export type UserContextType = {
 
 export const UserContext = createContext<UserContextType | null>(null);
 
-// hook صغير يختصر useContext ويتأكد إنو في Provider
 export const useUser = () => {
   const context = useContext(UserContext);
   if (!context) {

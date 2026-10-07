@@ -73,9 +73,9 @@ const MyPosts = () => {
   // ---------- Add ----------
   const handleAdd = (data: PostData) => {
     if (userId === null) return;
-    createPost({ ...data, userId }) // userId من الـ Context
+    createPost({ ...data, userId }) 
       .then((newPost) => {
-        setPosts((prev) => [newPost, ...prev]); // نضيفه فوق بدون ما نعمل fetch جديد
+        setPosts((prev) => [newPost, ...prev]); 
         setIsAdding(false);
       })
       .catch((err) => setError(err.message));
@@ -92,7 +92,7 @@ const MyPosts = () => {
       .catch((err) => setError(err.message));
   };
 
-  // ---------- Delete (مع حذف الكومنتات) ----------
+  // ---------- Delete  ----------
   const handleDelete = async (id: number) => {
     if (!window.confirm("Delete this post and its comments?")) return;
     try {
@@ -113,7 +113,7 @@ const MyPosts = () => {
         title="My Posts"
         addLabel="Add Post"
         onAdd={() => {
-          setEditingPost(null); // نسكّر أي تعديل مفتوح
+          setEditingPost(null); 
           setIsAdding(true);
         }}
         disabled={isAdding || editingPost !== null}
@@ -130,7 +130,6 @@ const MyPosts = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         {posts.map((post) =>
           editingPost?.id === post.id ? (
-            // وضع التعديل: بدل الـ Card منعرض الفورم بقيم البوست
             <PostForm
               key={post.id}
               initialTitle={post.title}
