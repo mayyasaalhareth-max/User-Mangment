@@ -160,6 +160,7 @@ export const fetchPostComments = (postId: number) =>
 
 export const createComment = (comment: {
   postId: number;
+  userId: number;
   name: string;
   email: string;
   body: string;

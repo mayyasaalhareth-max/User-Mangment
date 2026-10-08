@@ -11,6 +11,7 @@ export type TodoType = {
 export type CommentType = {
   id: number;
   postId: number;
+  userId: number;
   name: string;
   email: string;
   body: string;
