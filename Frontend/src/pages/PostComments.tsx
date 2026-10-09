@@ -122,15 +122,13 @@ const PostComments = () => {
                         setIsAdding(false);
                         setEditingComment(comment);
                       }}
-                      className="text-sm text-emerald-700 hover:underline"
-                    >
+                      className="font-medium text-cyan-400 transition-colors hover:text-cyan-300 hover:underline"                    >
                       Edit
                     </button>
                     <button
                       type="button"
                       onClick={() => handleDelete(comment.id)}
-                      className="text-sm text-red-600 hover:underline"
-                    >
+                      className="text-sm font-medium text-red-400 transition-colors hover:text-red-300 hover:underline"                    >
                       Delete
                     </button>
                   </div>

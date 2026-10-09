@@ -30,8 +30,7 @@ const AllPosts = () => {
                 <span>Post #{post.id}</span>
                 <Link
                   to={`/posts/${post.id}/comments`}
-                  className="text-emerald-700 hover:underline"
-                >
+                  className="font-medium text-cyan-400 transition-colors hover:text-cyan-300 hover:underline"                >
                   Comments
                 </Link>
               </div>

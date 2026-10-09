@@ -37,7 +37,6 @@ const MyPosts = () => {
 export default MyPosts;
  */
 
-
 import { useEffect, useState } from "react";
 import { useUser } from "../context/UserContext.ts";
 import {
@@ -73,9 +72,9 @@ const MyPosts = () => {
   // ---------- Add ----------
   const handleAdd = (data: PostData) => {
     if (userId === null) return;
-    createPost({ ...data, userId }) 
+    createPost({ ...data, userId })
       .then((newPost) => {
-        setPosts((prev) => [newPost, ...prev]); 
+        setPosts((prev) => [newPost, ...prev]);
         setIsAdding(false);
       })
       .catch((err) => setError(err.message));
@@ -86,7 +85,9 @@ const MyPosts = () => {
     if (!editingPost) return;
     updatePost(editingPost.id, data)
       .then((updated) => {
-        setPosts((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
+        setPosts((prev) =>
+          prev.map((p) => (p.id === updated.id ? updated : p))
+        );
         setEditingPost(null);
       })
       .catch((err) => setError(err.message));
@@ -96,8 +97,8 @@ const MyPosts = () => {
   const handleDelete = async (id: number) => {
     if (!window.confirm("Delete this post and its comments?")) return;
     try {
-    //  const comments = await fetchPostComments(id);
-     // await Promise.all(comments.map((c: { id: number }) => deleteComment(c.id)));
+      //  const comments = await fetchPostComments(id);
+      // await Promise.all(comments.map((c: { id: number }) => deleteComment(c.id)));
       await deletePost(id);
       setPosts((prev) => prev.filter((p) => p.id !== id));
     } catch (err) {
@@ -113,7 +114,7 @@ const MyPosts = () => {
         title="My Posts"
         addLabel="Add Post"
         onAdd={() => {
-          setEditingPost(null); 
+          setEditingPost(null);
           setIsAdding(true);
         }}
         disabled={isAdding || editingPost !== null}
@@ -149,15 +150,14 @@ const MyPosts = () => {
                       setIsAdding(false);
                       setEditingPost(post);
                     }}
-                    className="text-sm text-emerald-700 hover:underline"
+                    className="font-medium text-cyan-400 transition-colors hover:text-cyan-300 hover:underline"
                   >
                     Edit
                   </button>
                   <button
                     type="button"
                     onClick={() => handleDelete(post.id)}
-                    className="text-sm text-red-600 hover:underline"
-                  >
+                    className="text-sm font-medium text-red-400 transition-colors hover:text-red-300 hover:underline"                  >
                     Delete
                   </button>
                 </div>
